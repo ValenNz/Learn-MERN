@@ -8,5 +8,6 @@ const db = new Sequelize('lp_crudimage_sequelize', 'root', '', { // megnhubungka
 })
 // conts var = new Sequelize('nama database','root','password', {'host','dialect})
 
+
 /* Export Variabel */
 export default db

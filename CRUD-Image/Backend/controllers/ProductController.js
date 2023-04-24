@@ -36,7 +36,7 @@ export const addProduct = (req, res)=>{
     if(req.files === null) return res.status(400).json({msg: "No File Uploaded"}); // jika user tidak mengirim file maka kirim No File Uploaded
 
     /* Menangkap Request */
-    const name = req.body.title;
+    const {name, price} = req.body
     const file = req.files.file;
 
     /* Mengelola file */
@@ -126,7 +126,7 @@ export const deleteProduct = async(req,res)=>{
 
     try {
         const filepath = `./public/images/${product.image}` // mennagkap lokasi file disimpan
-        fs.unlinkSync(filepath) // melakukan pengha[pusan terhadap file
+        fs.unlinkSync(filepath) // melakukan penghapusan terhadap file
         await Product.destroy({
             where: {
                 id : req.params.id
