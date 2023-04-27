@@ -10,15 +10,17 @@ import {
     deleteUser,
 } from '../controllers/UserControllers.js'
 
+import { adminOnly, verifyUser } from "../middleware/AuthUser.js";
+
 /* Menggunakan module */
 const app = express.Router()
 
 /* Membaut endpoint */
-app.get('/',getUsers)
-app.get('/:id',getUserById)
-app.post('/',addUser)
-app.patch('/:id',updateUser)
-app.delete('/:id',deleteUser)
+app.get('/',verifyUser,adminOnly,getUsers)
+app.get('/:id',verifyUser,adminOnly,getUserById)
+app.post('/',verifyUser,adminOnly,addUser)
+app.patch('/:id',verifyUser,adminOnly,updateUser)
+app.delete('/:id',verifyUser,adminOnly,deleteUser)
 
 /* Export file ProductRoute */
 export default app

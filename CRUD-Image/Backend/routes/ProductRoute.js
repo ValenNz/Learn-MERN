@@ -10,15 +10,17 @@ import {
     deleteProduct,
 } from '../controllers/ProductController.js'
 
+import { verifyUser } from "../middleware/AuthUser.js";
+
 /* Menggunakan module */
 const app = express.Router()
 
 /* Membaut endpoint */
-app.get('/',getProducts)
-app.get('/:id',getProductById)
-app.post('/',addProduct)
-app.patch('/:id',updateProduct)
-app.delete('/:id',deleteProduct)
+app.get('/',verifyUser,getProducts)
+app.get('/:id',verifyUser,getProductById)
+app.post('/',verifyUser,addProduct)
+app.patch('/:id',verifyUser,updateProduct)
+app.delete('/:id',verifyUser,deleteProduct)
 
 /* Export file ProductRoute */
 export default app

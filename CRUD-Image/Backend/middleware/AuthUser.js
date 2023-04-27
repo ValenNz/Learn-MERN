@@ -1,5 +1,7 @@
+/* Import Module */
 import User from "../models/UserModel.js";
 
+/* Verifikasi user  */
 export const verifyUser = async (req, res, next) =>{
     if(!req.session.userId){
         return res.status(401).json({msg: "Mohon login ke akun Anda!"});
@@ -15,6 +17,7 @@ export const verifyUser = async (req, res, next) =>{
     next();
 }
 
+/* Verifikasi hanya admin (acc) */
 export const adminOnly = async (req, res, next) =>{
     const user = await User.findOne({
         where: {

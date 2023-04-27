@@ -2,7 +2,7 @@
 import User from "../models/UserModel.js";
 import path from "path";     //  jalur yang mencatat node apa sajakah yang harus dilewati dari root node ke node tertentu.
 import fs from "fs";         // file system : module untuk mengelola file
-import argon, { hash }  from "argon2"; // melakukan hash password
+import argon  from "argon2"; // melakukan hash password
 /* Function CRUD */
 
 /* READ */

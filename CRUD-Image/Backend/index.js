@@ -5,14 +5,15 @@ import session from "express-session";
 import cors from "cors"
 import dotenv from "dotenv"
 import db from "./config/database.js";
-import SequelizeStore from "connect-session-sequelize";
+import SequelizeStore from "connect-session-sequelize"; // module unutk mendapatkan session req
 
 /* Deklarasi dotenv dan express */
 dotenv.config()
 const app = express()
 
-/* Menggunakan session */
+/* Menyimpan session ke database */
 const sessionStore = SequelizeStore(session.Store);
+/* membuat tabel */
 const store = new sessionStore({
     db: db
 });
@@ -30,7 +31,7 @@ app.use(session({ // depedency session
     secret: process.env.SESS_SECRET,  // Call key
     resave: false,  // tanpa dyarat
     saveUninitialized: true,
-    store: store,
+    store: store, // mengambil dari lokasi seasion
     cookie: {
         secure: "auto" // keamanan akan secara otomatis
     }

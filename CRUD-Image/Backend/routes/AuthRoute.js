@@ -1,10 +1,14 @@
+/* Import Module */
 import express from "express";
-import {Login, logOut, Me} from "../controllers/AuthController.js";
+import {Login, logOut, Profile} from "../controllers/AuthController.js";
 
-const router = express.Router();
+/* Menggunakan modue */
+const app = express.Router();
 
-router.get('/me', Me);
-router.post('/login', Login);
-router.delete('/logout', logOut);
+/* Emdpoint */
+app.get('/profile', Profile);
+app.post('/login', Login);
+app.delete('/logout', logOut);
 
-export default router;
+/* Export file */
+export default app;

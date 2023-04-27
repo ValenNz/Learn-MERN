@@ -1,24 +1,37 @@
 /* Import Module */
 import {BrowserRouter, Routes, Route} from "react-router-dom";
+import Dashboard from "./pages/Dashboard";
+import Login from "./components/Login";
 
-/* Import Fungsi pada folder componenents */
-import ProductList from "./components/ProductList";
-import AddProduct from "./components/AddProduct";
-import EditProduct from "./components/EditProduct";
+import Users from "./components/users/Users";
+import AddUser from "./pages/User/AddUser";
+import EditUser from "./pages/User/EditUser";
+
+import Products from "./components/products/Products"
+import AddProduct from "./pages/Product/AddProduct";
+import EditProduct from "./pages/Product/EditProduct";
 
 /* Mebuat function */
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        {/* Mengarahkan url ke fil eyang dituju  */}
-        <Route path="/" element={<ProductList/>}/> 
-        <Route path="add" element={<AddProduct/>}/>
-        <Route path="edit/:id" element={<EditProduct/>}/>
+        
+        <Route path="/" element={<Login/>}/>
+        <Route path="/dashboard" element={<Dashboard/>}/>
+
+        <Route path="/users" element={<Users/>}/>
+        <Route path="/users/add" element={<AddUser/>}/>
+        <Route path="/users/edit/:id" element={<EditUser/>}/>
+
+        <Route path="/products" element={<Products />}/>
+        <Route path="/products/add" element={<AddProduct />}/>
+        <Route path="/products/edit/:id" element={<EditProduct />}/>
+
       </Routes>
     </BrowserRouter>
   );
 }
 
-/* Export file */
+/* Export */
 export default App;
