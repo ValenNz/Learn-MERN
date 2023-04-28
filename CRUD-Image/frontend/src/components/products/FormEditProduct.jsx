@@ -25,9 +25,9 @@ const FormEditProduct = () => {
       setPrice(response.data.price); // set title
       setFile(response.data.image); // set image
       setPreview(response.data.url); // set url 
-    } catch (error) {
-      if (error.response) {
-        setMsg(error.response.data.msg);
+    } catch (err) {
+      if (err.response) {
+        setMsg(err.response.data.msg);
       }
     }    
   };
@@ -46,20 +46,23 @@ const FormEditProduct = () => {
   const updateProduct = async (e) => {
     e.preventDefault(); // mematikan funnction default dari event
 
-    /* Membuat form data */
-    const formData = new FormData();
-    formData.append("file", file); // simpan data form data formData.append(data di db, data state)
-    formData.append("name", name);
-    formData.append("price", price);  // simpan data form data formData.append(data di db, data state)
+    // /* Membuat form data */
+    // const formData = new FormData();
+    // formData.append("file", file); // simpan data form data formData.append(data di db, data state)
+    // formData.append("name", name);
+    // formData.append("price", price);  // simpan data form data formData.append(data di db, data state)
 
 
     /* Uji Coba penyimpanan */
     try {
-      await axios.patch(`http://localhost:5000/product/${id}`, formData, { // Tunggu program berjalan
+      await axios.patch(`http://localhost:5000/product/${id}`, { // Tunggu program berjalan
       /* Mengirim header untuk mengelola file */
         headers: {
           "Content-type": "multipart/form-data",
         },
+        name: name,
+        price: price,
+        file:file
       });
       navigate("/products"); // jika berhasil redirect (arahkan) ke home
     } catch (err) {
