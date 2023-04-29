@@ -1,0 +1,31 @@
+/* Style Navbar */
+.navbar{
+    height: 50px; 
+    background-color: #1a1a1a;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .navContainer{
+    width: 100%;
+    max-width: 1024px;
+    color: #93deff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .logo{
+    font-weight: 500;
+  }
+  
+  /* Style Buttin */
+  .navButton{
+    margin-left: 20px;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    color: #f7f7f7;
+    background-color: #616571;
+    border-radius: 30px;
+  }

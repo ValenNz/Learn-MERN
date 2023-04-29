@@ -1,0 +1,14 @@
+/* Style Home */
+.homeContainer{
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+  
+  /* Style Title Home */
+  .homeTitle{
+    width: 1024px;
+    font-size: 20px;
+  }

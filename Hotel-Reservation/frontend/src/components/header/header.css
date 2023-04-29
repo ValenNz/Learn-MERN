@@ -1,0 +1,142 @@
+/* Style Header */
+.header {
+  background-color: #1a1a1a;
+  color: #93deff;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.headerContainer {
+  width: 100%;
+  max-width: 1024px;
+  margin: 20px 0px 100px 0px;
+}
+
+/* Style Header List */
+.headerContainer.listMode {
+  margin: 20px 0px 0px 0px;
+}
+
+.headerList {
+  display: flex;
+  gap: 40px;
+  margin-bottom: 50px;
+  color: #f7f7f7;
+}
+
+.headerListItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.headerListItem.active {
+  border: 1px solid #93deff;
+  padding: 10px;
+  border-radius: 20px;
+}
+
+/* Style Header Description */
+.headerDesc {
+  margin: 20px 0px;
+}
+
+/* Style Header Button (register) */
+.headerBtn {
+  background-color: #616161;
+  color: white;
+  font-weight: 500;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+/* Style Header Search*/
+.headerSearch {
+  height: 30px;
+  background-color: white;
+  border: 3px solid #93deff;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 10px 0px;
+  border-radius: 5px;
+  position: absolute;
+  bottom: -25px;
+  width: 100%;
+  max-width: 1024px;
+}
+
+.headerIcon {
+  color: lightgray;
+}
+
+.headerSearchItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.headerSearchInput {
+  border: none;
+  outline: none;
+}
+
+/* Style tulisan search */
+.headerSearchText {
+  color: lightgray;
+  cursor: pointer;
+}
+
+/* Style Option Date */
+.date {
+  position: absolute;
+  top: 50px;
+  z-index: 2;
+}
+
+/* Style Option */
+.options {
+  z-index: 2;
+  position: absolute;
+  top: 50px;
+  background-color: #f7f7f7;
+  color: gray;
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 0px 10px -5px rgba(0, 0, 0, 0.4);
+  box-shadow: 0px 0px 10px -5px rgba(0, 0, 0, 0.4);
+}
+
+.optionItem {
+  width: 200px;
+  display: flex;
+  justify-content: space-between;
+  margin: 10px;
+}
+
+
+/* SAtyle option action */
+.optionCounter {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 12px;
+  color: #1a1a1a;
+}
+
+/* Style Option */
+.optionCounterButton {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #93deff;
+  color: #93deff;
+  cursor: pointer;
+  background-color: #f7f7f7;
+}
+
+/* Melakuka disable pada pemilihan */
+.optionCounterButton:disabled {
+  cursor: not-allowed;
+}
